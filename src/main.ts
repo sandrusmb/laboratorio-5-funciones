@@ -1,4 +1,4 @@
-let numeroTurno = document.querySelector(".numero-turno");
+let numeroTurno = document.querySelector(".numero-turno") as HTMLElement;
 const botonAnterior = document.querySelector(
   ".previous-button"
 ) as HTMLButtonElement;
@@ -13,7 +13,11 @@ const botonEnviar = document.querySelector(
   ".submit-button"
 ) as HTMLButtonElement;
 
-botonAnterior?.addEventListener("click", restarTurno);
+function borrarTurno(): void {
+  if (numeroTurno !== null) {
+    numeroTurno.innerHTML = "00";
+  }
+}
 
 function restarTurno(): void {
   if (numeroTurno !== null) {
@@ -27,8 +31,6 @@ function restarTurno(): void {
   }
 }
 
-botonSiguiente?.addEventListener("click", sumarTurno);
-
 function sumarTurno(): void {
   if (numeroTurno !== null) {
     let numeroTurnoInterior: string = numeroTurno.innerHTML;
@@ -38,19 +40,14 @@ function sumarTurno(): void {
   }
 }
 
-botonBorrar?.addEventListener("click", borrarTurno);
-
-function borrarTurno(): void {
-  if (numeroTurno !== null) {
-    numeroTurno.innerHTML = "00";
-  }
-}
-
-botonEnviar?.addEventListener("click", escribirTurno);
-
 function escribirTurno(): void {
   const inputParaEscribirValue: string = inputParaEscribir.value;
   if (numeroTurno !== null) {
     numeroTurno.innerHTML = inputParaEscribirValue.padStart(2, "0");
   }
 }
+
+botonBorrar?.addEventListener("click", borrarTurno);
+botonAnterior?.addEventListener("click", restarTurno);
+botonSiguiente?.addEventListener("click", sumarTurno);
+botonEnviar?.addEventListener("click", escribirTurno);
