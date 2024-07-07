@@ -20,7 +20,7 @@ function borrarTurno(): void {
 }
 
 function restarTurno(): void {
-  if (numeroTurno !== null) {
+  if (numeroTurno !== null && numeroTurno !== undefined) {
     let numeroTurnoInterior: string = numeroTurno.innerHTML;
     let numeroTurnoInteriorParseado: number = parseInt(numeroTurnoInterior);
     let resultado: number = numeroTurnoInteriorParseado - 1;
@@ -32,7 +32,7 @@ function restarTurno(): void {
 }
 
 function sumarTurno(): void {
-  if (numeroTurno !== null) {
+  if (numeroTurno !== null && numeroTurno !== undefined) {
     let numeroTurnoInterior: string = numeroTurno.innerHTML;
     let numeroTurnoInteriorParseado: number = parseInt(numeroTurnoInterior);
     let resultado: number = numeroTurnoInteriorParseado + 1;
