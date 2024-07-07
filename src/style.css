@@ -65,6 +65,18 @@ button:focus-visible {
   height: 50px;
 }
 
+.input-container {
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.input {
+  margin-right: 16px;
+  padding: 0 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: transparent;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
