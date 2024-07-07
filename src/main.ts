@@ -16,6 +16,7 @@ const botonEnviar = document.querySelector(
 function borrarTurno(): void {
   if (numeroTurno !== null) {
     numeroTurno.innerHTML = "00";
+    inputParaEscribir.value = inputParaEscribir.placeholder;
   }
 }
 
